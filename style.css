@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Zen Antique Soft", serif;
+}
+body {
+  background-color: #f0f0f0;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  padding: 20px 0;
+}
+.containerLeft {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100vh - 140px);
+  padding: 0px 20px;
+  writing-mode: vertical-lr;
+}
+.containerRight {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 140px;
+  left: 100%;
+  transform: translateX(-100%);
+  height: calc(100vh - 140px);
+  padding: 0px 20px;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+}
+.containerLeft .text {
+  transform: scale(-1);
+}
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #e4e4e4;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.counter:hover,
+.counter:active {
+  width: 240px;
+  height: 120px;
+}
+.left {
+  height: 200px;
+  width: 100px;
+}
+.left:hover,
+.left:active {
+  height: 240px;
+  width: 120px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  min-width: 100vw;
+  padding-top: 50px;
+  font-style: italic;
+  background-color: #e4e4e4;
+  overflow: scroll;
+  cursor: pointer;
+  transition: all 1s ease-in;
+  clip-path: circle(100px at 50% -20%);
+  z-index: 100;
+}
+.listName {
+  width: 300px;
+  margin-left: -20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 3px double gray;
+}
+.listItems li {
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 1366px) {
+  .list.open {
+    clip-path: circle(1000px);
+  }
+}
