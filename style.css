@@ -5,10 +5,10 @@
   margin: 0;
   padding: 0;
   font-family: "Zen Antique Soft", serif;
+  color: rgb(90, 8, 8);
 }
 body {
   background-color: #ece2c1;
-  /* background-color: #f0f0f0; */
 }
 .container {
   display: flex;
@@ -50,8 +50,6 @@ body {
   border-radius: 20px;
   background-color: #ece2c1;
   box-shadow: 20px 20px 60px #c9c0a4, -20px -20px 60px #ffffde;
-  /* background-color: #e4e4e4; */
-  /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); */
   cursor: pointer;
   transition: all 0.2s ease-in;
 }
@@ -79,8 +77,7 @@ body {
   min-width: 100vw;
   padding-top: 50px;
   font-style: italic;
-  background-color: #e8eae9;
-  /* background-color: #e4e4e4; */
+  background-color: #ece2c1;
   overflow: scroll;
   cursor: pointer;
   transition: all 1s ease-in;
@@ -92,7 +89,7 @@ body {
   margin-left: -20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
-  border-bottom: 3px double gray;
+  border-bottom: 3px double rgb(90, 8, 8);
 }
 .listItems li {
   padding: 10px 0;
