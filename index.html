@@ -4,38 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="new.css" />
     <title>Food Menu</title>
   </head>
   <body>
     <div class="list">
       <ol class="listItems">
-        <h1 class="listName">Italian</h1>
+        <h1 class="listName"></h1>
       </ol>
     </div>
-    <div class="container">
-      <div class="counter"><span class="text">Italian</span></div>
-      <div class="counter"><span class="text">Italian</span></div>
-      <div class="counter"><span class="text">North Indian</span></div>
-      <div class="counter"><span class="text">South Indian</span></div>
+    <div class="event-title">
+      <h3>Sanjana Weds Gaurav</h3>
+      <h6>#SANJogMilaGAURse</h6>
     </div>
-    <div class="containerLeft">
-      <div class="counter left"><span class="text">North Indian</span></div>
-      <div class="counter left"><span class="text">South Indian</span></div>
+    <div class="searchbox-container">
+      <input type="text" class="searchbox" />
     </div>
-    <div class="containerRight">
-      <div class="counter left"><span class="text">North Indian</span></div>
-      <div class="counter left"><span class="text">South Indian</span></div>
-    </div>
+    <div class="categories-container"></div>
   </body>
-  <script>
-    const counters = document.querySelectorAll(".counter");
+  <script defer>
     const list = document.querySelector(".list");
     const listItems = document.querySelector(".listItems");
     const listName = document.querySelector(".listName");
 
     const menuNames = [
-      "Italian",
       "Italian",
       "North Indian",
       "South Indian",
@@ -87,8 +79,21 @@
       ],
     ];
 
-    for (let i = 0; i < counters.length; i++) {
-      counters[i].addEventListener("click", () => {
+    menuNames.forEach((menuName) => {
+      let categoriesContainer = document.querySelector(".categories-container");
+      let category = document.createElement("div");
+      category.classList.add("category");
+      categoriesContainer.appendChild(category);
+
+      let title = document.createElement("span");
+      title.classList.add("text");
+      title.innerText = menuName;
+      category.appendChild(title);
+    });
+
+    const categories = document.querySelectorAll(".category");
+    for (let i = 0; i < menuNames.length; i++) {
+      categories[i].addEventListener("click", () => {
         listItems.innerHTML = "";
 
         let h1 = document.createElement("h1");
@@ -108,6 +113,43 @@
 
     list.addEventListener("click", () => {
       list.style.clipPath = "circle(100px at 50% -20%)";
+      searchbox.style.position = "relative";
+      searchbox.style.zIndex = 0;
+    });
+
+    let searchList = [];
+    for (let i = 0; i < menuNames.length; i++) {
+      menuItems[i].forEach((item) => {
+        searchList.push(item + " - " + menuNames[i]);
+      });
+    }
+
+    const searchbox = document.querySelector(".searchbox");
+    searchbox.addEventListener("input", (e) => {
+      list.style.paddingTop = "200px";
+      e.target.style.zIndex = 2;
+      e.target.style.position = "fixed";
+
+      listItems.innerHTML = "";
+
+      let h1 = document.createElement("h1");
+      h1.innerText = "Search Result";
+      h1.classList.add("listName");
+      listItems.appendChild(h1);
+
+      filteredList = searchList.filter((item) =>
+        item.toUpperCase().includes(e.target.value.toUpperCase())
+      );
+
+      filteredList.forEach((item) => {
+        let li = document.createElement("li");
+        li.innerText = item;
+        listItems.appendChild(li);
+      });
+
+      list.style.clipPath = `circle(1700px)`;
+
+      console.log(e.target.value);
     });
   </script>
 </html>
