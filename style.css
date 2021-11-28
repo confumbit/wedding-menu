@@ -69,6 +69,9 @@ input:focus {
   box-shadow: 10px 10px 20px #c9c0a4, -10px -10px 20px #ffffde;
   cursor: pointer;
 }
+.category:active {
+  box-shadow: inset 10px 10px 20px #c9c0a4, inset -10px -10px 20px #ffffde;
+}
 .list {
   display: flex;
   flex-direction: column;
