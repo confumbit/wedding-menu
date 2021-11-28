@@ -67,6 +67,7 @@ input:focus {
   border-radius: 20px;
   background-color: #ece2c1;
   box-shadow: 10px 10px 20px #c9c0a4, -10px -10px 20px #ffffde;
+  transition: all 0.3s ease-in;
   cursor: pointer;
 }
 .category:active {
