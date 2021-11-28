@@ -29,6 +29,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: 80px;
+  transition: all 0.5s ease-in;
 }
 .searchbox {
   display: flex;
@@ -45,6 +46,9 @@ body {
   border-radius: 50px;
   box-shadow: 20px 20px 30px #c9c0a4, -20px -20px 30px #ffffde;
 }
+input:focus {
+  outline: none;
+}
 .categories-container {
   display: flex;
   align-items: center;
@@ -57,7 +61,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
+  width: 130px;
   height: 100px;
   margin: 20px;
   border-radius: 20px;
@@ -90,4 +94,9 @@ body {
 }
 .listItems li {
   padding: 10px 0;
+}
+@media screen and (max-width: 650px) {
+  .categories-container {
+    width: 100%;
+  }
 }
