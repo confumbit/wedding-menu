@@ -20,11 +20,15 @@ body {
   text-shadow: 0 0 10px #423c3cbb;
   z-index: 3;
 }
+.subtitle {
+  padding-top: 55px;
+  text-align: center;
+}
 .searchbox-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 80px;
 }
 .searchbox {
   display: flex;
@@ -39,7 +43,7 @@ body {
   background-color: #ece2c1;
   border: none;
   border-radius: 50px;
-  box-shadow: 20px 20px 60px #c9c0a4, -20px -20px 60px #ffffde;
+  box-shadow: 20px 20px 30px #c9c0a4, -20px -20px 30px #ffffde;
 }
 .categories-container {
   display: flex;
@@ -53,12 +57,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 150px;
   height: 100px;
   margin: 20px;
   border-radius: 20px;
   background-color: #ece2c1;
-  box-shadow: 20px 20px 60px #c9c0a4, -20px -20px 60px #ffffde;
+  box-shadow: 10px 10px 20px #c9c0a4, -10px -10px 20px #ffffde;
   cursor: pointer;
 }
 .list {
