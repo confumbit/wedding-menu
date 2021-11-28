@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="url" content="https://heatblast0044.github.io/wedding-menu/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="type" content="website" />
     <meta
       name="description"
@@ -25,17 +26,20 @@
   <body>
     <div class="list">
       <ol class="listItems">
+      <i class="fa fa-chevron-left back"></i>
         <h1 class="listName"></h1>
       </ol>
     </div>
+    <div class="stickybar">
     <div class="event-title">
-      <h3>Sanjana Weds Gaurav</h3>
-      <h6>#SANJogMilaGAURse</h6>
+      <h2>Sanjana Weds Gaurav</h1>
+      <h4>#SANJogMilaGAURse</h4>
     </div>
     <h4 class="subtitle">Wedding Food Menu</h4>
     <div class="searchbox-container">
       <input type="text" class="searchbox" />
     </div>
+</div>
     <div class="categories-container"></div>
   </body>
   <script defer>
@@ -46,27 +50,21 @@
     const menuNames = [
       "Delhi Chat",
       "Puchka Mela",
-      "Bar-Be-Que Counter",
+      "Barbeque Counter",
       "Gujarat Ki Gali Se",
       "South Indian",
-      "Accompanients",
       "Italian (Live)",
       "Mexican (Live)",
-      "Sizzlers (Live)",
-      "Burger Station (3-4 Varieties)",
       "Japanese",
       "Thai Special",
       "Arabian & Lebanese",
       "Punjabi (Live)",
       "Rajasthani",
       "Rice & Lentils",
-      "Papad Mela (Live)",
       "Ice Cream",
       "Ice Gola",
-      "Assorted Mocktails & Soda Sikanji",
-      "Kesar Kadai Milk",
       "Fruits",
-      "Paan Counter",
+      "Other Specialties",
     ];
     const menuItems = [
       [
@@ -95,11 +93,9 @@
         "Steam Idly",
         "Chilly Cheese Idly",
         "Kunafa Idly",
-        "Bar-be-cue Wada & Mysore Bhajji",
+        "Barbeque Wada & Mysore Bhajji",
         "Assorted Dosa",
         "Appam Dosa",
-      ],
-      [
         "Coconut Chutney",
         "Phally Chutney",
         "Allam Chutney",
@@ -121,8 +117,6 @@
         "Mini Burrito",
         "Quesadillas",
       ],
-      [],
-      [],
       ["Sushi (2-3 Varieties)"],
       [
         "Pad Thai Noodles",
@@ -167,7 +161,6 @@
         "Yellow Daal Tadka (Live)",
         "Kesar Plain Curd",
       ],
-      [],
       [
         "Nitrogen Ice Cream",
         "Thai Roll Ice Cream",
@@ -175,8 +168,6 @@
         "Waffles and Pancakes with Toppings",
       ],
       ["Kala Khatta", "Khova Burf"],
-      [],
-      [],
       [
         "California Grapes",
         "Sweet Tamarind",
@@ -194,7 +185,7 @@
         "Papaya",
         "Anjeer",
       ],
-      [],
+      ["Sizzlers (Live)", "Burgers", "Paan and Refreshments", "Kesar Kadai Milk", "Assorted Mocktails & Soda Sikanji", "Papad Mela"]
     ];
 
     menuNames.forEach((menuName) => {
@@ -214,6 +205,11 @@
       categories[i].addEventListener("click", () => {
         listItems.innerHTML = "";
 
+        let iframe = document.createElement("i");
+        iframe.classList.add("fa");
+        iframe.classList.add("fa-chevron-left");
+        iframe.classList.add("back");
+        listItems.appendChild(iframe);
         let h1 = document.createElement("h1");
         h1.innerText = menuNames[i];
         h1.classList.add("listName");
@@ -237,6 +233,7 @@
 
     let searchList = [];
     for (let i = 0; i < menuNames.length; i++) {
+      console.log(menuItems[i])
       menuItems[i].forEach((item) => {
         searchList.push(item + " - " + menuNames[i]);
       });
@@ -244,13 +241,19 @@
 
     const searchbox = document.querySelector(".searchbox");
     searchbox.addEventListener("input", (e) => {
-      list.style.paddingTop = "200px";
+      console.log("hi")
+      list.style.paddingTop = "300px";
       e.target.style.zIndex = 2;
       e.target.style.position = "fixed";
       document.querySelector(".searchbox-container").style.paddingTop = "50px";
 
       listItems.innerHTML = "";
 
+        let iframe = document.createElement("i");
+        iframe.classList.add("fa");
+        iframe.classList.add("fa-chevron-left");
+        iframe.classList.add("back");
+        listItems.appendChild(iframe);
       let h1 = document.createElement("h1");
       h1.innerText = "Search Result";
       h1.classList.add("listName");
