@@ -93,8 +93,11 @@ input:focus {
   clip-path: circle(100px at 50% -20%);
   z-index: 1;
 }
+.listItems {
+  width: 350px;
+}
 .listName {
-  width: 300px;
+  max-width: 300px;
   margin-left: -20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -106,5 +109,10 @@ input:focus {
 @media screen and (max-width: 650px) {
   .categories-container {
     width: 100%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .listItems {
+    width: 80%;
   }
 }
